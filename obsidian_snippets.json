@@ -7,12 +7,12 @@
   {
     "trigger": "dm",
     "replacement": "\\begin{equation}\n$0\n\\end{equation}",
-    "options": "tAw"
+    "options": "btAw"
   },
   {
     "trigger": "adm",
     "replacement": "\\begin{equation*}\n$0\n\\end{equation*}",
-    "options": "tAw"
+    "options": "btAw"
   },
   {
     "trigger": "beg",

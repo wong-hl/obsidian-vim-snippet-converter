@@ -45,7 +45,7 @@ class ObsidianSnippet:
             match c:
                 case 'c':
                     raise ValueError(f"option is {c}")
-                case 'A' | 'r' | 'w':
+                case 'A' | 'r' | 'w' | 'b':
                     converted += f"{c}"
                 case 'm' | 'M' |'n':
                     converted += "i"
