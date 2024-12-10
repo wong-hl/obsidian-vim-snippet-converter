@@ -6,7 +6,12 @@
   },
   {
     "trigger": "dm",
-    "replacement": "$$\n$0\n$$",
+    "replacement": "\\begin{equation}\n$0\n\\end{equation}",
+    "options": "tAw"
+  },
+  {
+    "trigger": "adm",
+    "replacement": "\\begin{equation*}\n$0\n\\end{equation*}",
     "options": "tAw"
   },
   {
