@@ -201,7 +201,7 @@
   },
   {
     "trigger": "_",
-    "replacement": "_{$0}$1",
+    "replacement": "_{$1}$0",
     "options": "mA"
   },
   {
@@ -211,7 +211,7 @@
   },
   {
     "trigger": "sq",
-    "replacement": "\\sqrt{ $0 }$1",
+    "replacement": "\\sqrt{ $1 }$0",
     "options": "mA"
   },
   {
