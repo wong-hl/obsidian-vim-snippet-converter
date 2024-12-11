@@ -237,11 +237,6 @@
     "priority": -1
   },
   {
-    "trigger": "/([^\\])(exp|log|ln)/",
-    "replacement": "[[0]]\\[[1]]",
-    "options": "rmA"
-  },
-  {
     "trigger": "conj",
     "replacement": "^{*}",
     "options": "mA"
@@ -265,11 +260,6 @@
     "trigger": "rm",
     "replacement": "\\mathrm{$0}$1",
     "options": "mA"
-  },
-  {
-    "trigger": "/([^\\])(det)/",
-    "replacement": "[[0]]\\[[1]]",
-    "options": "rmA"
   },
   {
     "trigger": "trace",
@@ -405,18 +395,8 @@
     "options": "rmA"
   },
   {
-    "trigger": "/\\hat{([A-Za-z])}(d)/",
-    "replacement": "\\hat{[[0]]}_{[[1]]}",
-    "options": "rmA"
-  },
-  {
     "trigger": "/\\vec{([A-Za-z])}(d)/",
     "replacement": "\\vec{[[0]]}_{[[1]]}",
-    "options": "rmA"
-  },
-  {
-    "trigger": "/\\mathbf{([A-Za-z])}(d)/",
-    "replacement": "\\mathbf{[[0]]}_{[[1]]}",
     "options": "rmA"
   },
   {
@@ -802,24 +782,6 @@
     "trigger": "infi",
     "replacement": "\\int_{-\\infty}^{\\infty} $0 \\, d${1:x} $2",
     "options": "mA"
-  },
-  {
-    "trigger": "/([^\\])(arcsin|sin|arccos|cos|arctan|tan|csc|sec|cot)/",
-    "replacement": "[[0]]\\[[1]]",
-    "options": "rmA",
-    "description": "Add backslash before trig funcs"
-  },
-  {
-    "trigger": "/\\(arcsin|sin|arccos|cos|arctan|tan|csc|sec|cot)([A-Za-gi-z])/",
-    "replacement": "\\[[0]] [[1]]",
-    "options": "rmA",
-    "description": "Add space after trig funcs. Skips letter h to allow sinh, cosh, etc."
-  },
-  {
-    "trigger": "/\\(sinh|cosh|tanh|coth)([A-Za-z])/",
-    "replacement": "\\[[0]] [[1]]",
-    "options": "rmA",
-    "description": "Add space after hyperbolic trig funcs"
   },
   {
     "trigger": "U",

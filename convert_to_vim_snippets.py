@@ -68,8 +68,12 @@ class ObsidianSnippet:
             trigger = trigger.replace("\n", "\\n") 
             for snippet_var, replacement in obsidian_snippet_variables.items():
                 trigger = trigger.replace(snippet_var, replacement)
-            trigger = f"\"{re.escape(trigger)}\""
-        return trigger
+            try:
+                re.compile(trigger)
+            except Exception as e:
+                print(self.__dict__)
+                raise ValueError(e)
+        return f"\"{trigger}\""
 
     def generate_description(self):
         if self.description is None:

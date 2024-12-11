@@ -10,13 +10,13 @@ snippet mk "" A
 $$0$
 endsnippet
 
-snippet dm "" Aw
+snippet dm "" bAw
 \begin{equation}
 $0
 \end{equation}
 endsnippet
 
-snippet adm "" Aw
+snippet adm "" bAw
 \begin{equation*}
 $0
 \end{equation*}
@@ -238,13 +238,8 @@ endsnippet
 
 priority -1
 context "math()"
-snippet "/\(\[A\-Za\-z\]\)\(d\)/" "Auto letter subscript" riA
+snippet "/([A-Za-z])(d)/" "Auto letter subscript" riA
 `!p snip.rv = match.group(1)`_{ `!p snip.rv = match.group(2)`}
-endsnippet
-
-context "math()"
-snippet "/\(\[\^\\\]\)\(exp\|log\|ln\)/" "" riA
-`!p snip.rv = match.group(1)`\ `!p snip.rv = match.group(2)`
 endsnippet
 
 context "math()"
@@ -273,69 +268,64 @@ snippet rm "" iA
 endsnippet
 
 context "math()"
-snippet "/\(\[\^\\\]\)\(det\)/" "" riA
-`!p snip.rv = match.group(1)`\ `!p snip.rv = match.group(2)`
-endsnippet
-
-context "math()"
 snippet trace "" iA
 \mathrm{Tr}
 endsnippet
 
 context "math()"
-snippet "\(\[a\-zA\-Z\]\)hat" "" riA
+snippet "([a-zA-Z])hat" "" riA
 \hat{`!p snip.rv = match.group(1)`}
 endsnippet
 
 context "math()"
-snippet "\(\[a\-zA\-Z\]\)bar" "" riA
+snippet "([a-zA-Z])bar" "" riA
 \bar{`!p snip.rv = match.group(1)`}
 endsnippet
 
 priority -1
 context "math()"
-snippet "\(\[a\-zA\-Z\]\)dot" "" riA
+snippet "([a-zA-Z])dot" "" riA
 \dot{`!p snip.rv = match.group(1)`}
 endsnippet
 
 priority 1
 context "math()"
-snippet "\(\[a\-zA\-Z\]\)ddot" "" riA
+snippet "([a-zA-Z])ddot" "" riA
 \ddot{`!p snip.rv = match.group(1)`}
 endsnippet
 
 context "math()"
-snippet "\(\[a\-zA\-Z\]\)tilde" "" riA
+snippet "([a-zA-Z])tilde" "" riA
 \tilde{`!p snip.rv = match.group(1)`}
 endsnippet
 
 context "math()"
-snippet "\(\[a\-zA\-Z\]\)und" "" riA
+snippet "([a-zA-Z])und" "" riA
 \underline{`!p snip.rv = match.group(1)`}
 endsnippet
 
 context "math()"
-snippet "\(\[a\-zA\-Z\]\)vec" "" riA
+snippet "([a-zA-Z])vec" "" riA
 \vec{`!p snip.rv = match.group(1)`}
 endsnippet
 
 context "math()"
-snippet "\(\[a\-zA\-Z\]\),\\\." "" riA
+snippet "([a-zA-Z]),\." "" riA
 \mathbf{`!p snip.rv = match.group(1)`}
 endsnippet
 
 context "math()"
-snippet "\(\[a\-zA\-Z\]\)\\\.," "" riA
+snippet "([a-zA-Z])\.," "" riA
 \mathbf{`!p snip.rv = match.group(1)`}
 endsnippet
 
 context "math()"
-snippet "\\\\\(alpha\|beta\|gamma\|Gamma\|delta\|Delta\|epsilon\|varepsilon\|zeta\|eta\|theta\|vartheta\|Theta\|iota\|kappa\|lambda\|Lambda\|mu\|nu\|xi\|omicron\|pi\|rho\|varrho\|sigma\|Sigma\|tau\|upsilon\|Upsilon\|phi\|varphi\|Phi\|chi\|psi\|omega\|Omega\),\\\." "" riA
+snippet "\\(alpha|beta|gamma|Gamma|delta|Delta|epsilon|varepsilon|zeta|eta|theta|vartheta|Theta|iota|kappa|lambda|Lambda|mu|nu|xi|omicron|pi|rho|varrho|sigma|Sigma|tau|upsilon|Upsilon|phi|varphi|Phi|chi|psi|omega|Omega),\." "" riA
 \boldsymbol{\`!p snip.rv = match.group(1)`}
 endsnippet
 
 context "math()"
-snippet "\\\\\(alpha\|beta\|gamma\|Gamma\|delta\|Delta\|epsilon\|varepsilon\|zeta\|eta\|theta\|vartheta\|Theta\|iota\|kappa\|lambda\|Lambda\|mu\|nu\|xi\|omicron\|pi\|rho\|varrho\|sigma\|Sigma\|tau\|upsilon\|Upsilon\|phi\|varphi\|Phi\|chi\|psi\|omega\|Omega\)\\\.," "" riA
+snippet "\\(alpha|beta|gamma|Gamma|delta|Delta|epsilon|varepsilon|zeta|eta|theta|vartheta|Theta|iota|kappa|lambda|Lambda|mu|nu|xi|omicron|pi|rho|varrho|sigma|Sigma|tau|upsilon|Upsilon|phi|varphi|Phi|chi|psi|omega|Omega)\.," "" riA
 \boldsymbol{\`!p snip.rv = match.group(1)`}
 endsnippet
 
@@ -406,23 +396,13 @@ ddots
 endsnippet
 
 context "math()"
-snippet "/\(\[A\-Za\-z\]\)_\(dd\)/" "" riA
+snippet "/([A-Za-z])_(dd)/" "" riA
 `!p snip.rv = match.group(1)`_{ `!p snip.rv = match.group(2)`}
 endsnippet
 
 context "math()"
-snippet "/\\hat\{\(\[A\-Za\-z\]\)\}\(d\)/" "" riA
-\hat{`!p snip.rv = match.group(1)`}_{ `!p snip.rv = match.group(2)`}
-endsnippet
-
-context "math()"
-snippet "/\\vec\{\(\[A\-Za\-z\]\)\}\(d\)/" "" riA
+snippet "/\vec{([A-Za-z])}(d)/" "" riA
 \vec{`!p snip.rv = match.group(1)`}_{ `!p snip.rv = match.group(2)`}
-endsnippet
-
-context "math()"
-snippet "/\\mathbf\{\(\[A\-Za\-z\]\)\}\(d\)/" "" riA
-\mathbf{`!p snip.rv = match.group(1)`}_{ `!p snip.rv = match.group(2)`}
 endsnippet
 
 context "math()"
@@ -687,62 +667,62 @@ snippet NN "" iA
 endsnippet
 
 context "math()"
-snippet "\(\[\^\\\\\]\)\(alpha\|beta\|gamma\|Gamma\|delta\|Delta\|epsilon\|varepsilon\|zeta\|eta\|theta\|vartheta\|Theta\|iota\|kappa\|lambda\|Lambda\|mu\|nu\|xi\|omicron\|pi\|rho\|varrho\|sigma\|Sigma\|tau\|upsilon\|Upsilon\|phi\|varphi\|Phi\|chi\|psi\|omega\|Omega\)" "Add backslash before Greek letters" riA
+snippet "([^\\])(alpha|beta|gamma|Gamma|delta|Delta|epsilon|varepsilon|zeta|eta|theta|vartheta|Theta|iota|kappa|lambda|Lambda|mu|nu|xi|omicron|pi|rho|varrho|sigma|Sigma|tau|upsilon|Upsilon|phi|varphi|Phi|chi|psi|omega|Omega)" "Add backslash before Greek letters" riA
 `!p snip.rv = match.group(1)`\ `!p snip.rv = match.group(2)`
 endsnippet
 
 context "math()"
-snippet "\(\[\^\\\\\]\)\(parallel\|perp\|partial\|nabla\|hbar\|ell\|infty\|oplus\|ominus\|otimes\|oslash\|square\|star\|dagger\|vee\|wedge\|subseteq\|subset\|supseteq\|supset\|emptyset\|exists\|nexists\|forall\|implies\|impliedby\|iff\|setminus\|neg\|lor\|land\|bigcup\|bigcap\|cdot\|times\|simeq\|approx\)" "Add backslash before symbols" riA
+snippet "([^\\])(parallel|perp|partial|nabla|hbar|ell|infty|oplus|ominus|otimes|oslash|square|star|dagger|vee|wedge|subseteq|subset|supseteq|supset|emptyset|exists|nexists|forall|implies|impliedby|iff|setminus|neg|lor|land|bigcup|bigcap|cdot|times|simeq|approx)" "Add backslash before symbols" riA
 `!p snip.rv = match.group(1)`\ `!p snip.rv = match.group(2)`
 endsnippet
 
 context "math()"
-snippet "\\\\\(alpha\|beta\|gamma\|Gamma\|delta\|Delta\|epsilon\|varepsilon\|zeta\|eta\|theta\|vartheta\|Theta\|iota\|kappa\|lambda\|Lambda\|mu\|nu\|xi\|omicron\|pi\|rho\|varrho\|sigma\|Sigma\|tau\|upsilon\|Upsilon\|phi\|varphi\|Phi\|chi\|psi\|omega\|Omega\|parallel\|perp\|partial\|nabla\|hbar\|ell\|infty\|oplus\|ominus\|otimes\|oslash\|square\|star\|dagger\|vee\|wedge\|subseteq\|subset\|supseteq\|supset\|emptyset\|exists\|nexists\|forall\|implies\|impliedby\|iff\|setminus\|neg\|lor\|land\|bigcup\|bigcap\|cdot\|times\|simeq\|approx\|leq\|geq\|neq\|gg\|ll\|equiv\|sim\|propto\|rightarrow\|leftarrow\|Rightarrow\|Leftarrow\|leftrightarrow\|to\|mapsto\|cap\|cup\|in\|sum\|prod\|exp\|ln\|log\|det\|dots\|vdots\|ddots\|pm\|mp\|int\|iint\|iiint\|oint\)\(\[A\-Za\-z\]\)" "" riA
+snippet "\\(alpha|beta|gamma|Gamma|delta|Delta|epsilon|varepsilon|zeta|eta|theta|vartheta|Theta|iota|kappa|lambda|Lambda|mu|nu|xi|omicron|pi|rho|varrho|sigma|Sigma|tau|upsilon|Upsilon|phi|varphi|Phi|chi|psi|omega|Omega|parallel|perp|partial|nabla|hbar|ell|infty|oplus|ominus|otimes|oslash|square|star|dagger|vee|wedge|subseteq|subset|supseteq|supset|emptyset|exists|nexists|forall|implies|impliedby|iff|setminus|neg|lor|land|bigcup|bigcap|cdot|times|simeq|approx|leq|geq|neq|gg|ll|equiv|sim|propto|rightarrow|leftarrow|Rightarrow|Leftarrow|leftrightarrow|to|mapsto|cap|cup|in|sum|prod|exp|ln|log|det|dots|vdots|ddots|pm|mp|int|iint|iiint|oint)([A-Za-z])" "" riA
 \`!p snip.rv = match.group(1)`  `!p snip.rv = match.group(2)`
 endsnippet
 
 context "math()"
-snippet "\\\\\(alpha\|beta\|gamma\|Gamma\|delta\|Delta\|epsilon\|varepsilon\|zeta\|eta\|theta\|vartheta\|Theta\|iota\|kappa\|lambda\|Lambda\|mu\|nu\|xi\|omicron\|pi\|rho\|varrho\|sigma\|Sigma\|tau\|upsilon\|Upsilon\|phi\|varphi\|Phi\|chi\|psi\|omega\|Omega\|parallel\|perp\|partial\|nabla\|hbar\|ell\|infty\|oplus\|ominus\|otimes\|oslash\|square\|star\|dagger\|vee\|wedge\|subseteq\|subset\|supseteq\|supset\|emptyset\|exists\|nexists\|forall\|implies\|impliedby\|iff\|setminus\|neg\|lor\|land\|bigcup\|bigcap\|cdot\|times\|simeq\|approx\)\ sr" "" riA
+snippet "\\(alpha|beta|gamma|Gamma|delta|Delta|epsilon|varepsilon|zeta|eta|theta|vartheta|Theta|iota|kappa|lambda|Lambda|mu|nu|xi|omicron|pi|rho|varrho|sigma|Sigma|tau|upsilon|Upsilon|phi|varphi|Phi|chi|psi|omega|Omega|parallel|perp|partial|nabla|hbar|ell|infty|oplus|ominus|otimes|oslash|square|star|dagger|vee|wedge|subseteq|subset|supseteq|supset|emptyset|exists|nexists|forall|implies|impliedby|iff|setminus|neg|lor|land|bigcup|bigcap|cdot|times|simeq|approx) sr" "" riA
 \`!p snip.rv = match.group(1)`^{2}
 endsnippet
 
 context "math()"
-snippet "\\\\\(alpha\|beta\|gamma\|Gamma\|delta\|Delta\|epsilon\|varepsilon\|zeta\|eta\|theta\|vartheta\|Theta\|iota\|kappa\|lambda\|Lambda\|mu\|nu\|xi\|omicron\|pi\|rho\|varrho\|sigma\|Sigma\|tau\|upsilon\|Upsilon\|phi\|varphi\|Phi\|chi\|psi\|omega\|Omega\|parallel\|perp\|partial\|nabla\|hbar\|ell\|infty\|oplus\|ominus\|otimes\|oslash\|square\|star\|dagger\|vee\|wedge\|subseteq\|subset\|supseteq\|supset\|emptyset\|exists\|nexists\|forall\|implies\|impliedby\|iff\|setminus\|neg\|lor\|land\|bigcup\|bigcap\|cdot\|times\|simeq\|approx\)\ cb" "" riA
+snippet "\\(alpha|beta|gamma|Gamma|delta|Delta|epsilon|varepsilon|zeta|eta|theta|vartheta|Theta|iota|kappa|lambda|Lambda|mu|nu|xi|omicron|pi|rho|varrho|sigma|Sigma|tau|upsilon|Upsilon|phi|varphi|Phi|chi|psi|omega|Omega|parallel|perp|partial|nabla|hbar|ell|infty|oplus|ominus|otimes|oslash|square|star|dagger|vee|wedge|subseteq|subset|supseteq|supset|emptyset|exists|nexists|forall|implies|impliedby|iff|setminus|neg|lor|land|bigcup|bigcap|cdot|times|simeq|approx) cb" "" riA
 \`!p snip.rv = match.group(1)`^{3}
 endsnippet
 
 context "math()"
-snippet "\\\\\(alpha\|beta\|gamma\|Gamma\|delta\|Delta\|epsilon\|varepsilon\|zeta\|eta\|theta\|vartheta\|Theta\|iota\|kappa\|lambda\|Lambda\|mu\|nu\|xi\|omicron\|pi\|rho\|varrho\|sigma\|Sigma\|tau\|upsilon\|Upsilon\|phi\|varphi\|Phi\|chi\|psi\|omega\|Omega\|parallel\|perp\|partial\|nabla\|hbar\|ell\|infty\|oplus\|ominus\|otimes\|oslash\|square\|star\|dagger\|vee\|wedge\|subseteq\|subset\|supseteq\|supset\|emptyset\|exists\|nexists\|forall\|implies\|impliedby\|iff\|setminus\|neg\|lor\|land\|bigcup\|bigcap\|cdot\|times\|simeq\|approx\)\ rd" "" riA
+snippet "\\(alpha|beta|gamma|Gamma|delta|Delta|epsilon|varepsilon|zeta|eta|theta|vartheta|Theta|iota|kappa|lambda|Lambda|mu|nu|xi|omicron|pi|rho|varrho|sigma|Sigma|tau|upsilon|Upsilon|phi|varphi|Phi|chi|psi|omega|Omega|parallel|perp|partial|nabla|hbar|ell|infty|oplus|ominus|otimes|oslash|square|star|dagger|vee|wedge|subseteq|subset|supseteq|supset|emptyset|exists|nexists|forall|implies|impliedby|iff|setminus|neg|lor|land|bigcup|bigcap|cdot|times|simeq|approx) rd" "" riA
 \`!p snip.rv = match.group(1)`^{$0}$1
 endsnippet
 
 context "math()"
-snippet "\\\\\(alpha\|beta\|gamma\|Gamma\|delta\|Delta\|epsilon\|varepsilon\|zeta\|eta\|theta\|vartheta\|Theta\|iota\|kappa\|lambda\|Lambda\|mu\|nu\|xi\|omicron\|pi\|rho\|varrho\|sigma\|Sigma\|tau\|upsilon\|Upsilon\|phi\|varphi\|Phi\|chi\|psi\|omega\|Omega\|parallel\|perp\|partial\|nabla\|hbar\|ell\|infty\|oplus\|ominus\|otimes\|oslash\|square\|star\|dagger\|vee\|wedge\|subseteq\|subset\|supseteq\|supset\|emptyset\|exists\|nexists\|forall\|implies\|impliedby\|iff\|setminus\|neg\|lor\|land\|bigcup\|bigcap\|cdot\|times\|simeq\|approx\)\ hat" "" riA
+snippet "\\(alpha|beta|gamma|Gamma|delta|Delta|epsilon|varepsilon|zeta|eta|theta|vartheta|Theta|iota|kappa|lambda|Lambda|mu|nu|xi|omicron|pi|rho|varrho|sigma|Sigma|tau|upsilon|Upsilon|phi|varphi|Phi|chi|psi|omega|Omega|parallel|perp|partial|nabla|hbar|ell|infty|oplus|ominus|otimes|oslash|square|star|dagger|vee|wedge|subseteq|subset|supseteq|supset|emptyset|exists|nexists|forall|implies|impliedby|iff|setminus|neg|lor|land|bigcup|bigcap|cdot|times|simeq|approx) hat" "" riA
 \hat{\`!p snip.rv = match.group(1)`}
 endsnippet
 
 context "math()"
-snippet "\\\\\(alpha\|beta\|gamma\|Gamma\|delta\|Delta\|epsilon\|varepsilon\|zeta\|eta\|theta\|vartheta\|Theta\|iota\|kappa\|lambda\|Lambda\|mu\|nu\|xi\|omicron\|pi\|rho\|varrho\|sigma\|Sigma\|tau\|upsilon\|Upsilon\|phi\|varphi\|Phi\|chi\|psi\|omega\|Omega\|parallel\|perp\|partial\|nabla\|hbar\|ell\|infty\|oplus\|ominus\|otimes\|oslash\|square\|star\|dagger\|vee\|wedge\|subseteq\|subset\|supseteq\|supset\|emptyset\|exists\|nexists\|forall\|implies\|impliedby\|iff\|setminus\|neg\|lor\|land\|bigcup\|bigcap\|cdot\|times\|simeq\|approx\)\ dot" "" riA
+snippet "\\(alpha|beta|gamma|Gamma|delta|Delta|epsilon|varepsilon|zeta|eta|theta|vartheta|Theta|iota|kappa|lambda|Lambda|mu|nu|xi|omicron|pi|rho|varrho|sigma|Sigma|tau|upsilon|Upsilon|phi|varphi|Phi|chi|psi|omega|Omega|parallel|perp|partial|nabla|hbar|ell|infty|oplus|ominus|otimes|oslash|square|star|dagger|vee|wedge|subseteq|subset|supseteq|supset|emptyset|exists|nexists|forall|implies|impliedby|iff|setminus|neg|lor|land|bigcup|bigcap|cdot|times|simeq|approx) dot" "" riA
 \dot{\`!p snip.rv = match.group(1)`}
 endsnippet
 
 context "math()"
-snippet "\\\\\(alpha\|beta\|gamma\|Gamma\|delta\|Delta\|epsilon\|varepsilon\|zeta\|eta\|theta\|vartheta\|Theta\|iota\|kappa\|lambda\|Lambda\|mu\|nu\|xi\|omicron\|pi\|rho\|varrho\|sigma\|Sigma\|tau\|upsilon\|Upsilon\|phi\|varphi\|Phi\|chi\|psi\|omega\|Omega\|parallel\|perp\|partial\|nabla\|hbar\|ell\|infty\|oplus\|ominus\|otimes\|oslash\|square\|star\|dagger\|vee\|wedge\|subseteq\|subset\|supseteq\|supset\|emptyset\|exists\|nexists\|forall\|implies\|impliedby\|iff\|setminus\|neg\|lor\|land\|bigcup\|bigcap\|cdot\|times\|simeq\|approx\)\ bar" "" riA
+snippet "\\(alpha|beta|gamma|Gamma|delta|Delta|epsilon|varepsilon|zeta|eta|theta|vartheta|Theta|iota|kappa|lambda|Lambda|mu|nu|xi|omicron|pi|rho|varrho|sigma|Sigma|tau|upsilon|Upsilon|phi|varphi|Phi|chi|psi|omega|Omega|parallel|perp|partial|nabla|hbar|ell|infty|oplus|ominus|otimes|oslash|square|star|dagger|vee|wedge|subseteq|subset|supseteq|supset|emptyset|exists|nexists|forall|implies|impliedby|iff|setminus|neg|lor|land|bigcup|bigcap|cdot|times|simeq|approx) bar" "" riA
 \bar{\`!p snip.rv = match.group(1)`}
 endsnippet
 
 context "math()"
-snippet "\\\\\(alpha\|beta\|gamma\|Gamma\|delta\|Delta\|epsilon\|varepsilon\|zeta\|eta\|theta\|vartheta\|Theta\|iota\|kappa\|lambda\|Lambda\|mu\|nu\|xi\|omicron\|pi\|rho\|varrho\|sigma\|Sigma\|tau\|upsilon\|Upsilon\|phi\|varphi\|Phi\|chi\|psi\|omega\|Omega\|parallel\|perp\|partial\|nabla\|hbar\|ell\|infty\|oplus\|ominus\|otimes\|oslash\|square\|star\|dagger\|vee\|wedge\|subseteq\|subset\|supseteq\|supset\|emptyset\|exists\|nexists\|forall\|implies\|impliedby\|iff\|setminus\|neg\|lor\|land\|bigcup\|bigcap\|cdot\|times\|simeq\|approx\)\ vec" "" riA
+snippet "\\(alpha|beta|gamma|Gamma|delta|Delta|epsilon|varepsilon|zeta|eta|theta|vartheta|Theta|iota|kappa|lambda|Lambda|mu|nu|xi|omicron|pi|rho|varrho|sigma|Sigma|tau|upsilon|Upsilon|phi|varphi|Phi|chi|psi|omega|Omega|parallel|perp|partial|nabla|hbar|ell|infty|oplus|ominus|otimes|oslash|square|star|dagger|vee|wedge|subseteq|subset|supseteq|supset|emptyset|exists|nexists|forall|implies|impliedby|iff|setminus|neg|lor|land|bigcup|bigcap|cdot|times|simeq|approx) vec" "" riA
 \vec{\`!p snip.rv = match.group(1)`}
 endsnippet
 
 context "math()"
-snippet "\\\\\(alpha\|beta\|gamma\|Gamma\|delta\|Delta\|epsilon\|varepsilon\|zeta\|eta\|theta\|vartheta\|Theta\|iota\|kappa\|lambda\|Lambda\|mu\|nu\|xi\|omicron\|pi\|rho\|varrho\|sigma\|Sigma\|tau\|upsilon\|Upsilon\|phi\|varphi\|Phi\|chi\|psi\|omega\|Omega\|parallel\|perp\|partial\|nabla\|hbar\|ell\|infty\|oplus\|ominus\|otimes\|oslash\|square\|star\|dagger\|vee\|wedge\|subseteq\|subset\|supseteq\|supset\|emptyset\|exists\|nexists\|forall\|implies\|impliedby\|iff\|setminus\|neg\|lor\|land\|bigcup\|bigcap\|cdot\|times\|simeq\|approx\)\ tilde" "" riA
+snippet "\\(alpha|beta|gamma|Gamma|delta|Delta|epsilon|varepsilon|zeta|eta|theta|vartheta|Theta|iota|kappa|lambda|Lambda|mu|nu|xi|omicron|pi|rho|varrho|sigma|Sigma|tau|upsilon|Upsilon|phi|varphi|Phi|chi|psi|omega|Omega|parallel|perp|partial|nabla|hbar|ell|infty|oplus|ominus|otimes|oslash|square|star|dagger|vee|wedge|subseteq|subset|supseteq|supset|emptyset|exists|nexists|forall|implies|impliedby|iff|setminus|neg|lor|land|bigcup|bigcap|cdot|times|simeq|approx) tilde" "" riA
 \tilde{\`!p snip.rv = match.group(1)`}
 endsnippet
 
 context "math()"
-snippet "\\\\\(alpha\|beta\|gamma\|Gamma\|delta\|Delta\|epsilon\|varepsilon\|zeta\|eta\|theta\|vartheta\|Theta\|iota\|kappa\|lambda\|Lambda\|mu\|nu\|xi\|omicron\|pi\|rho\|varrho\|sigma\|Sigma\|tau\|upsilon\|Upsilon\|phi\|varphi\|Phi\|chi\|psi\|omega\|Omega\|parallel\|perp\|partial\|nabla\|hbar\|ell\|infty\|oplus\|ominus\|otimes\|oslash\|square\|star\|dagger\|vee\|wedge\|subseteq\|subset\|supseteq\|supset\|emptyset\|exists\|nexists\|forall\|implies\|impliedby\|iff\|setminus\|neg\|lor\|land\|bigcup\|bigcap\|cdot\|times\|simeq\|approx\)\ und" "" riA
+snippet "\\(alpha|beta|gamma|Gamma|delta|Delta|epsilon|varepsilon|zeta|eta|theta|vartheta|Theta|iota|kappa|lambda|Lambda|mu|nu|xi|omicron|pi|rho|varrho|sigma|Sigma|tau|upsilon|Upsilon|phi|varphi|Phi|chi|psi|omega|Omega|parallel|perp|partial|nabla|hbar|ell|infty|oplus|ominus|otimes|oslash|square|star|dagger|vee|wedge|subseteq|subset|supseteq|supset|emptyset|exists|nexists|forall|implies|impliedby|iff|setminus|neg|lor|land|bigcup|bigcap|cdot|times|simeq|approx) und" "" riA
 \underline{\`!p snip.rv = match.group(1)`}
 endsnippet
 
@@ -752,7 +732,7 @@ snippet par "" i
 endsnippet
 
 context "math()"
-snippet "/pa\(\[A\-Za\-z\]\)\(\[A\-Za\-z\]\)/" "" ri
+snippet "/pa([A-Za-z])([A-Za-z])/" "" ri
 \frac{ \partial `!p snip.rv = match.group(1)` }{ \partial  `!p snip.rv = match.group(2)` } 
 endsnippet
 
@@ -805,21 +785,6 @@ endsnippet
 context "math()"
 snippet infi "" iA
 \int_{-\infty}^{\infty} $0 \, d${1:x} $2
-endsnippet
-
-context "math()"
-snippet "/\(\[\^\\\]\)\(arcsin\|sin\|arccos\|cos\|arctan\|tan\|csc\|sec\|cot\)/" "Add backslash before trig funcs" riA
-`!p snip.rv = match.group(1)`\ `!p snip.rv = match.group(2)`
-endsnippet
-
-context "math()"
-snippet "/\\\(arcsin\|sin\|arccos\|cos\|arctan\|tan\|csc\|sec\|cot\)\(\[A\-Za\-gi\-z\]\)/" "Add space after trig funcs. Skips letter h to allow sinh, cosh, etc." riA
-\`!p snip.rv = match.group(1)`  `!p snip.rv = match.group(2)`
-endsnippet
-
-context "math()"
-snippet "/\\\(sinh\|cosh\|tanh\|coth\)\(\[A\-Za\-z\]\)/" "Add space after hyperbolic trig funcs" riA
-\`!p snip.rv = match.group(1)`  `!p snip.rv = match.group(2)`
 endsnippet
 
 context "math()"
@@ -1102,15 +1067,15 @@ snippet lra "" iA
 \left< $0 \right> $1
 endsnippet
 
-snippet "\(alpha\|beta\|gamma\|Gamma\|delta\|Delta\|epsilon\|varepsilon\|zeta\|eta\|theta\|vartheta\|Theta\|iota\|kappa\|lambda\|Lambda\|mu\|nu\|xi\|omicron\|pi\|rho\|varrho\|sigma\|Sigma\|tau\|upsilon\|Upsilon\|phi\|varphi\|Phi\|chi\|psi\|omega\|Omega\)\(\[\\n\\s\.,\?!:'\]\)" "" rAw
+snippet "(alpha|beta|gamma|Gamma|delta|Delta|epsilon|varepsilon|zeta|eta|theta|vartheta|Theta|iota|kappa|lambda|Lambda|mu|nu|xi|omicron|pi|rho|varrho|sigma|Sigma|tau|upsilon|Upsilon|phi|varphi|Phi|chi|psi|omega|Omega)([\n\s.,?!:'])" "" rAw
 $\`!p snip.rv = match.group(1)`$ `!p snip.rv = match.group(2)`
 endsnippet
 
-snippet "/\(\[A\-Za\-z\]=d\+\)\(\[\\ns\.,\?!:'\]\)/" "" rAw
+snippet "/([A-Za-z]=d+)([\ns.,?!:'])/" "" rAw
 $`!p snip.rv = match.group(1)`$ `!p snip.rv = match.group(2)`
 endsnippet
 
-snippet "/\(\[A\-Za\-z\]=\[A\-Za\-z\]\[\+\-\]d\+\)\(\[\\ns\.,\?!:'\]\)/" "" rAw
+snippet "/([A-Za-z]=[A-Za-z][+-]d+)([\ns.,?!:'])/" "" rAw
 $`!p snip.rv = match.group(1)`$ `!p snip.rv = match.group(2)`
 endsnippet
 

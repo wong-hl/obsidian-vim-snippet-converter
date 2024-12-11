@@ -1,0 +1,13 @@
+# Include this code block at the top of a *.snippets file...
+# ----------------------------- #
+global !p
+def math():
+    return vim.eval('vimtex#syntax#in_mathzone()') == '1'
+endglobal
+
+
+priority 100
+context "math()"
+snippet '(?<!\\)(sin|arsin|cos|arcos|arccot|cot|tan|arctan|csc|sec|cot|ln|log|exp|star|perp)' "ln" rwA
+\\`!p snip.rv = match.group(1)`
+endsnippet
