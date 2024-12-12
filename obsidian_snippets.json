@@ -941,17 +941,17 @@
   {
     "trigger": "cases",
     "replacement": "\\begin{numcases}{$0}\n$1\n\\end{numcases}",
-    "options": "mA"
+    "options": "A"
   },
   {
     "trigger": "align",
     "replacement": "\\begin{align}\n$0\n\\end{align}",
-    "options": "mA"
+    "options": "A"
   },
   {
     "trigger": "array",
     "replacement": "\\begin{array}\n$0\n\\end{array}",
-    "options": "mA"
+    "options": "A"
   },
   {
     "trigger": "avg",
