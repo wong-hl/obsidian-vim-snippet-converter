@@ -809,11 +809,6 @@
     "options": "mA"
   },
   {
-    "trigger": "S",
-    "replacement": "\\sqrt{ ${VISUAL} }",
-    "options": "mA"
-  },
-  {
     "trigger": "kbt",
     "replacement": "k_{B}T",
     "options": "mA"
