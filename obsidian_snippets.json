@@ -6,17 +6,17 @@
   },
   {
     "trigger": "dm",
-    "replacement": "\\begin{equation}\n$0\n\\end{equation}",
+    "replacement": "\\begin{equation}\n$1\n\\end{equation}$0",
     "options": "btAw"
   },
   {
     "trigger": "adm",
-    "replacement": "\\begin{equation*}\n$0\n\\end{equation*}",
+    "replacement": "\\begin{equation*}\n$1\n\\end{equation*}$0",
     "options": "btAw"
   },
   {
     "trigger": "beg",
-    "replacement": "\\begin{$0}\n$1\n\\end{$0}",
+    "replacement": "\\begin{$1}\n$2\n\\end{$1}",
     "options": "mA"
   },
   {
@@ -171,12 +171,12 @@
   },
   {
     "trigger": "text",
-    "replacement": "\\text{$0}$1",
+    "replacement": "\\text{$1}$0",
     "options": "mA"
   },
   {
     "trigger": "\"",
-    "replacement": "\\text{$0}$1",
+    "replacement": "\\text{$1}$0",
     "options": "mA"
   },
   {
@@ -196,7 +196,7 @@
   },
   {
     "trigger": "rd",
-    "replacement": "^{$0}$1",
+    "replacement": "^{$1}$0",
     "options": "mA"
   },
   {
@@ -206,7 +206,7 @@
   },
   {
     "trigger": "sts",
-    "replacement": "_\\text{$0}",
+    "replacement": "_\\text{$1}",
     "options": "mA"
   },
   {
@@ -216,12 +216,12 @@
   },
   {
     "trigger": "//",
-    "replacement": "\\frac{$0}{$1}$2",
+    "replacement": "\\frac{$1}{$2}$0",
     "options": "mA"
   },
   {
     "trigger": "ee",
-    "replacement": "e^{ $0 }$1",
+    "replacement": "e^{ $1 }$0",
     "options": "mA"
   },
   {
@@ -325,23 +325,23 @@
   },
   {
     "trigger": "hat",
-    "replacement": "\\hat{$0}$1",
+    "replacement": "\\hat{$1}$0",
     "options": "mA"
   },
   {
     "trigger": "bar",
-    "replacement": "\\bar{$0}$1",
+    "replacement": "\\bar{$1}$0",
     "options": "mA"
   },
   {
     "trigger": "dot",
-    "replacement": "\\dot{$0}$1",
+    "replacement": "\\dot{$1}$0",
     "options": "mA",
     "priority": -1
   },
   {
     "trigger": "ddot",
-    "replacement": "\\ddot{$0}$1",
+    "replacement": "\\ddot{$1}$0",
     "options": "mA"
   },
   {
@@ -351,22 +351,22 @@
   },
   {
     "trigger": "tilde",
-    "replacement": "\\tilde{$0}$1",
+    "replacement": "\\tilde{$1}$0",
     "options": "mA"
   },
   {
     "trigger": "und",
-    "replacement": "\\underline{$0}$1",
+    "replacement": "\\underline{$1}$0",
     "options": "mA"
   },
   {
     "trigger": "ovr",
-    "replacement": "\\overline{$0}$1",
+    "replacement": "\\overline{$1}$0",
     "options": "mA"
   },
   {
     "trigger": "vec",
-    "replacement": "\\vec{$0}$1",
+    "replacement": "\\vec{$1}$0",
     "options": "mA"
   },
   {
@@ -621,7 +621,7 @@
   },
   {
     "trigger": "set",
-    "replacement": "\\{ $0 \\}$1",
+    "replacement": "\\{ $1 \\}$0",
     "options": "mA"
   },
   {
@@ -724,7 +724,7 @@
   },
   {
     "trigger": "par",
-    "replacement": "\\frac{ \\partial ${0:y} }{ \\partial ${1:x} } $2",
+    "replacement": "\\frac{ \\partial $1 } }{ \\partial $0 } } $2",
     "options": "m"
   },
   {
@@ -1002,42 +1002,42 @@
   },
   {
     "trigger": "(",
-    "replacement": "($0)$1",
+    "replacement": "($1)$0",
     "options": "mA"
   },
   {
     "trigger": "{",
-    "replacement": "{$0}$1",
+    "replacement": "{$1}$0",
     "options": "mA"
   },
   {
     "trigger": "[",
-    "replacement": "[$0]$1",
+    "replacement": "[$1]$0",
     "options": "mA"
   },
   {
     "trigger": "lr(",
-    "replacement": "\\left( $0 \\right) $1",
+    "replacement": "\\left( $1 \\right) $0",
     "options": "mA"
   },
   {
     "trigger": "lr{",
-    "replacement": "\\left\\{ $0 \\right\\} $1",
+    "replacement": "\\left\\{ $1 \\right\\} $0",
     "options": "mA"
   },
   {
     "trigger": "lr[",
-    "replacement": "\\left[ $0 \\right] $1",
+    "replacement": "\\left[ $1 \\right] $0",
     "options": "mA"
   },
   {
     "trigger": "lr|",
-    "replacement": "\\left| $0 \\right| $1",
+    "replacement": "\\left| $1 \\right| $0",
     "options": "mA"
   },
   {
     "trigger": "lra",
-    "replacement": "\\left< $0 \\right> $1",
+    "replacement": "\\left< $1 \\right> $0",
     "options": "mA"
   },
   {
