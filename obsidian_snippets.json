@@ -35,141 +35,6 @@
     "options": "tA"
   },
   {
-    "trigger": "@a",
-    "replacement": "\\alpha",
-    "options": "mA"
-  },
-  {
-    "trigger": "@b",
-    "replacement": "\\beta",
-    "options": "mA"
-  },
-  {
-    "trigger": "@g",
-    "replacement": "\\gamma",
-    "options": "mA"
-  },
-  {
-    "trigger": "@G",
-    "replacement": "\\Gamma",
-    "options": "mA"
-  },
-  {
-    "trigger": "@d",
-    "replacement": "\\delta",
-    "options": "mA"
-  },
-  {
-    "trigger": "@D",
-    "replacement": "\\Delta",
-    "options": "mA"
-  },
-  {
-    "trigger": "@e",
-    "replacement": "\\epsilon",
-    "options": "mA"
-  },
-  {
-    "trigger": ":e",
-    "replacement": "\\varepsilon",
-    "options": "mA"
-  },
-  {
-    "trigger": "@z",
-    "replacement": "\\zeta",
-    "options": "mA"
-  },
-  {
-    "trigger": "@t",
-    "replacement": "\\theta",
-    "options": "mA"
-  },
-  {
-    "trigger": "@T",
-    "replacement": "\\Theta",
-    "options": "mA"
-  },
-  {
-    "trigger": ":t",
-    "replacement": "\\vartheta",
-    "options": "mA"
-  },
-  {
-    "trigger": "@i",
-    "replacement": "\\iota",
-    "options": "mA"
-  },
-  {
-    "trigger": "@k",
-    "replacement": "\\kappa",
-    "options": "mA"
-  },
-  {
-    "trigger": "@l",
-    "replacement": "\\lambda",
-    "options": "mA"
-  },
-  {
-    "trigger": "@L",
-    "replacement": "\\Lambda",
-    "options": "mA"
-  },
-  {
-    "trigger": "@s",
-    "replacement": "\\sigma",
-    "options": "mA"
-  },
-  {
-    "trigger": "@S",
-    "replacement": "\\Sigma",
-    "options": "mA"
-  },
-  {
-    "trigger": "@u",
-    "replacement": "\\upsilon",
-    "options": "mA"
-  },
-  {
-    "trigger": "@U",
-    "replacement": "\\Upsilon",
-    "options": "mA"
-  },
-  {
-    "trigger": "@o",
-    "replacement": "\\omega",
-    "options": "mA"
-  },
-  {
-    "trigger": "@O",
-    "replacement": "\\Omega",
-    "options": "mA"
-  },
-  {
-    "trigger": "@p",
-    "replacement": "\\phi",
-    "options": "mA"
-  },
-  {
-    "trigger": "@P",
-    "replacement": "\\Phi",
-    "options": "mA"
-  },
-  {
-    "trigger": ":p",
-    "replacement": "\\varphi",
-    "options": "mA"
-  },
-  {
-    "trigger": "ome",
-    "replacement": "\\omega",
-    "options": "mA"
-  },
-  {
-    "trigger": "Ome",
-    "replacement": "\\Omega",
-    "options": "mA"
-  },
-  {
     "trigger": "text",
     "replacement": "\\text{$1}$0",
     "options": "mA"
@@ -237,6 +102,11 @@
     "priority": -1
   },
   {
+    "trigger": "/([^\\])(exp|log|ln)/",
+    "replacement": "[[0]]\\[[1]]",
+    "options": "rmA"
+  },
+  {
     "trigger": "conj",
     "replacement": "^{*}",
     "options": "mA"
@@ -260,6 +130,11 @@
     "trigger": "rm",
     "replacement": "\\mathrm{$0}$1",
     "options": "mA"
+  },
+  {
+    "trigger": "/([^\\])(det)/",
+    "replacement": "[[0]]\\[[1]]",
+    "options": "rmA"
   },
   {
     "trigger": "trace",
@@ -395,8 +270,18 @@
     "options": "rmA"
   },
   {
+    "trigger": "/\\hat{([A-Za-z])}(d)/",
+    "replacement": "\\hat{[[0]]}_{[[1]]}",
+    "options": "rmA"
+  },
+  {
     "trigger": "/\\vec{([A-Za-z])}(d)/",
     "replacement": "\\vec{[[0]]}_{[[1]]}",
+    "options": "rmA"
+  },
+  {
+    "trigger": "/\\mathbf{([A-Za-z])}(d)/",
+    "replacement": "\\mathbf{[[0]]}_{[[1]]}",
     "options": "rmA"
   },
   {
@@ -782,6 +667,24 @@
     "trigger": "infi",
     "replacement": "\\int_{-\\infty}^{\\infty} $0 \\, d${1:x} $2",
     "options": "mA"
+  },
+  {
+    "trigger": "/([^\\])(arcsin|sin|arccos|cos|arctan|tan|csc|sec|cot)/",
+    "replacement": "[[0]]\\[[1]]",
+    "options": "rmA",
+    "description": "Add backslash before trig funcs"
+  },
+  {
+    "trigger": "/\\(arcsin|sin|arccos|cos|arctan|tan|csc|sec|cot)([A-Za-gi-z])/",
+    "replacement": "\\[[0]] [[1]]",
+    "options": "rmA",
+    "description": "Add space after trig funcs. Skips letter h to allow sinh, cosh, etc."
+  },
+  {
+    "trigger": "/\\(sinh|cosh|tanh|coth)([A-Za-z])/",
+    "replacement": "\\[[0]] [[1]]",
+    "options": "rmA",
+    "description": "Add space after hyperbolic trig funcs"
   },
   {
     "trigger": "U",
